@@ -21,6 +21,8 @@ const LICENSE = "CSLB Lic. #421785";
 // No response-time claim is on file in proof.md, so the line under the buttons names the next step instead.
 const RESPONSE_TIME = "";
 const CTA = "Book my custom design meeting";
+// Video testimonials, reviews and case studies stay hidden until Ed's real ones are on file (12 Nov 2026).
+const SHOW_PROOF = false;
 
 export type AduContent = {
   slug: string;
@@ -115,7 +117,7 @@ export function AduLanding({ c }: { c: AduContent }) {
         {/* Selected work - real Mullen projects (custom homes). ADU photos replace these as Ed sends them. */}
         <section style={{ padding: "var(--section-y) 0" }}>
           <div className="gw-container">
-            <Head eyebrow="Selected work" title={c.workTitle} lead="Custom homes and outdoor living by Mullen Construction. ADU project photos are on the way." />
+            <Head eyebrow="Selected work" title={c.workTitle} lead="Custom homes and outdoor living by Mullen Construction." />
             <div className="lp-4up" style={{ display: "grid", gap: "var(--space-7)" }}>
               {[
                 ["Courtyard and gate", "MULLEN_PROJ_06_courtyard-gate-garden.jpg"],
@@ -131,6 +133,7 @@ export function AduLanding({ c }: { c: AduContent }) {
         </section>
 
         {/* Video testimonials - slots until past ADU clients record (Ed has clients willing, 19 Oct 2026). */}
+        {SHOW_PROOF && (
         <section style={{ padding: "var(--section-y) 0" }}>
           <div className="gw-container">
             <Head eyebrow="Watch them say it" title="ADU clients, in their own words" />
@@ -142,6 +145,7 @@ export function AduLanding({ c }: { c: AduContent }) {
             <CtaBlock label={CTA} responseTime={RESPONSE_TIME} />
           </div>
         </section>
+        )}
 
         {/* Where the record is public - numbers from proof.md only. */}
         <section style={{ padding: "var(--section-y) 0" }}>
@@ -204,6 +208,7 @@ export function AduLanding({ c }: { c: AduContent }) {
         </section>
 
         {/* Kind words - empty until real reviews are on file. No invented quotes, no rating. */}
+        {SHOW_PROOF && (<>
         <section style={{ padding: "var(--section-y) 0", background: "var(--surface-sunken)" }}>
           <div className="gw-container">
             <Head eyebrow="Kind words" title="What ADU clients said afterwards" />
@@ -235,6 +240,7 @@ export function AduLanding({ c }: { c: AduContent }) {
             <CtaBlock label={CTA} responseTime={RESPONSE_TIME} tone="on-brand" />
           </div>
         </section>
+        </>)}
 
         {/* The close */}
         <section id="lead-form" style={{ padding: "var(--section-y) 0" }}>
