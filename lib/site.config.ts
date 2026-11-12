@@ -10,7 +10,7 @@ export const site = {
   email: "ed@mullenconstruction.com",
   address: "2805 Ocean St, Carlsbad, CA 92008",
   city: "Carlsbad",
-  url: "https://adu.mullenconstruction.com", // your live domain - used by sitemap + metadata
+  url: "https://adu.mullendeckpros.com", // your live domain - used by sitemap + metadata
 
   // ⛔ THE GOOGLE ADS API REVIEWER OPENS YOUR SITE AND LOOKS FOR THREE THINGS:
   // an About page with real background, a physical address, and a privacy policy with
