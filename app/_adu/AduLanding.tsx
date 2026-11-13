@@ -95,7 +95,7 @@ export function AduLanding({ c }: { c: AduContent }) {
           </div>
           {/* Founder video slot. The poster is a real Mullen home until Ed films his 60 seconds. */}
           <div className="gw-container" style={{ marginTop: "var(--space-9)" }}>
-            <Figure ratio="16 / 9" label="Ed on camera · 30-60 seconds (to film)" src={IMG("MULLEN_PROJ_05_front-elevation-white-tuscan.jpg")} alt="A Mullen Construction custom home in Coastal North County" />
+            <Figure ratio="16 / 9" label="Ed on camera · 30-60 seconds (to film)" src={IMG("MULLEN_ADU_01_great-room.jpg")} alt="Vaulted great room in a Mullen Construction ADU" />
           </div>
         </section>
 
@@ -117,13 +117,13 @@ export function AduLanding({ c }: { c: AduContent }) {
         {/* Selected work - real Mullen projects (custom homes). ADU photos replace these as Ed sends them. */}
         <section style={{ padding: "var(--section-y) 0" }}>
           <div className="gw-container">
-            <Head eyebrow="Selected work" title={c.workTitle} lead="Custom homes and outdoor living by Mullen Construction." />
+            <Head eyebrow="Selected work" title={c.workTitle} lead="Inside a recent ADU built by Mullen Construction." />
             <div className="lp-4up" style={{ display: "grid", gap: "var(--space-7)" }}>
               {[
-                ["Courtyard and gate", "MULLEN_PROJ_06_courtyard-gate-garden.jpg"],
-                ["Covered patio", "MULLEN_PROJ_04_covered-patio-stone-column.jpg"],
-                ["Stone arch entry", "MULLEN_PROJ_07_stone-arch-entry.jpg"],
-                ["Interior stair", "MULLEN_PROJ_08_interior-stairs.jpg"],
+                ["ADU kitchen", "MULLEN_ADU_02_kitchen-island.jpg"],
+                ["ADU bathroom", "MULLEN_ADU_03_bathroom.jpg"],
+                ["Covered balcony", "MULLEN_ADU_04_balcony.jpg"],
+                ["ADU living room", "MULLEN_ADU_05_living-room.jpg"],
               ].map(([l, f]) => (
                 <Figure key={l} ratio="3 / 4" label={l} src={IMG(f)} alt={`${l} by Mullen Construction`} />
               ))}
@@ -162,7 +162,7 @@ export function AduLanding({ c }: { c: AduContent }) {
         {/* Process */}
         <section style={{ padding: "var(--section-y) 0" }}>
           <div className="gw-container lp-2up-media lp-flip" style={{ display: "grid", gap: "var(--space-10)", alignItems: "center" }}>
-            <Figure ratio="4 / 5" label="A Mullen build" src={IMG("MULLEN_PROJ_03_patio-stone-chimney-travertine.jpg")} alt="Stone chimney patio by Mullen Construction" />
+            <Figure ratio="4 / 5" label="A Mullen build" src={IMG("MULLEN_ADU_06_kitchen-wide.jpg")} alt="Open kitchen in a Mullen Construction ADU" />
             <div style={{ display: "grid", gap: "var(--space-6)" }}>
               <div style={{ display: "grid", gap: "var(--space-4)" }}>
                 <span className="ms-sh__eyebrow">How it works</span>
