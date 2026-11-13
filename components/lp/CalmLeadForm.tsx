@@ -87,6 +87,13 @@ export function CalmLeadForm({ business, phone, page, cta, defaultType }: { busi
       if (!WEBHOOK) { setFailed(true); return; }
       const res = await fetch(WEBHOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       if (res.ok) {
+        // Enhanced conversions: hand the thank-you page the email + phone (E.164) for gtag user_data.
+        // gtag hashes them (SHA-256) before anything leaves the browser. Cleared right after use.
+        try {
+          const digits = (payload.phone || "").replace(/\D/g, "");
+          const phone_number = digits.length === 10 ? `+1${digits}` : digits ? `+${digits}` : "";
+          sessionStorage.setItem("mjc_ec", JSON.stringify({ email: (payload.email || "").trim().toLowerCase(), phone_number }));
+        } catch { /* storage blocked: conversion still fires, just without enhanced data */ }
         window.location.assign("/thank-you/");
         return;
       }
